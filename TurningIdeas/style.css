@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding: 0;
+  text-align: center;
+  color: white;
+}
+
+#hero-img {
+  background-image: linear-gradient(rgba(0.5,0.6,0.5,0.2), rgba(0.5,0.1,0.5,0)),
+     url("https://codetheweb.blog/assets/img/posts/css-advanced-background-images/cover.jpg");
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container-box {
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 50px;
+}
+
+
+h3 {
+  font-size: 17px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+mark {
+  font-size: 20px;
+  background-color: white;
+  color: black;
+  padding: 2px 5px;
+}
+
+#myBackground {
+  font-size: 12px;
+  text-align: center;
+  background-color: #554F51;
+  margin: 10px 0;
+}
+
+
+p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+
+button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  background-color: #EA9870;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ffae00;
+  transform: scale(1.05);
+}
+
+
+#myAskName, #askToday, #mySpecialty {
+  font-size: 16px;
+  color: #FFFFFF;
+  margin-top: 5px;
+}
