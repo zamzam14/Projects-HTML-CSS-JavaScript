@@ -4,15 +4,15 @@ This repository contains a collection of my web development projects.
 Each project is organized in its own folder with separate files for **HTML**, **CSS**, **JavaScript**, and a project-specific README.
 
 ## 📂 Structure
-- [AgeCalculator/](https://github.com/zamzam14/EasyCalculator/tree/main/AgeCalculator)  
-  Tool to calculate age from birthdate.  
-- [EasyCalculator/](https://github.com/zamzam14/EasyCalculator/tree/main/EasyCalculator)  
-  Simple calculator built with HTML, CSS, and JavaScript.  
-- [TurningIdeas/](https://github.com/zamzam14/EasyCalculator/tree/main/TurningIdeas)  
-  Interactive web page with prompts and dynamic responses.  
-- [Portfolio/](https://github.com/zamzam14/EasyCalculator/tree/main/Portfolio)  
-  Personal portfolio showcasing skills and background.  
-- *(More projects will be added here as I continue learning...)*
+| Project | Description |
+|---|---|
+| [AgeCalculator](./AgeCalculator) | Calculates a person's age from their birthdate. |
+| [ColorYourMood](./ColorYourMood) | A color-picker app that matches colors to your mood. |
+| [EasyCalculator](./EasyCalculator) | A simple calculator built with HTML, CSS, and JavaScript. |
+| [TurningIdeas](./TurningIdeas) | Interactive web page with prompts and dynamic responses. |
+ 
+*(More projects will be added here as I continue learning...)*
+
 
 
 ## 🚀 How to Use
