@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="صفحة ترحيبية تفاعلية مع اختيار الألوان || Interactive Welcome Page with Color Picker">
+  <meta name="keywords" content="HTML, CSS, JavaScript, Welcome Page, Color Picker, Interactive, Responsive">
+  <meta name="author" content="Zamzam Issa">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لون مزاجك || Color Your Mood</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <button class="lang-toggle" id="langBtn" onclick="toggleLang()">EN</button>
+
+  <div class="card">
+    <h1 class="welcome-title" id="title">مرحباً بك! 👋</h1>
+    <p class="welcome-sub" id="subtitle">خلّ الشاشة تحكي مزاجك</p>
+
+    <div class="color-section">
+      <label id="colorLabel">اختر لونك المفضل 🎨</label>
+      <div class="color-picker-wrapper">
+        <input type="color" id="colorPicker" value="#667eea" />
+        <div id="colorPreview"></div>
+        <span id="colorHex">#667eea</span>
+      </div>
+    </div>
+
+    <button class="btn" id="applyBtn" onclick="applyColor()">تم ✓</button>
+
+    <div class="message-box" id="messageBox"></div>
+  </div>
+
+  <script src="javascript.js"></script>
+</body>
+</html>
