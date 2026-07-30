@@ -49,5 +49,7 @@ Then open any project's `index.html` in your browser — no installation needed.
 **Zamzam Issa Al Balushi · زمزم عيسى البلوشي**
 Front-End Developer · مطوّرة واجهات أمامية
 
-🔗 Portfolio · الموقع: [zamzamissa-portfolio.vercel.app](https://zamzamissa-portfolio.vercel.app)
+🔗 Portfolio · الموقع: [zamzamissa-3dprofile.vercel.app](https://zamzamissa-3dprofile.vercel.app)
 🐙 GitHub: [@zamzam14](https://github.com/zamzam14)
+💼 LinkedIn: [zamzam-al-balushi](https://www.linkedin.com/in/zamzam-al-balushi-593a252b0)
+📧 Email: [zamzamissa2000@gmail.com](mailto:zamzamissa2000@gmail.com)
