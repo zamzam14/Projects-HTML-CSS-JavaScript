@@ -1,0 +1,238 @@
+/* ===== Variables (change the colors easily from here) ===== */
+:root {
+  /* palette */
+  --c1: #3c4245;   /* dark charcoal */
+  --c2: #5f6769;   /* grey        */
+  --c3: #719192;   /* teal grey   */
+  --c4: #dfcdc3;   /* light beige */
+
+  --card-1: var(--c1);            /* card gradient start */
+  --card-2: var(--c2);            /* card gradient end   */
+  --accent: var(--c4);           /* buttons / labels / links */
+  --accent-soft: rgba(223, 205, 195, 0.12);
+  --text: #f1ede9;               /* light text */
+  --muted: #a4b0af;              /* secondary text */
+  --border: rgba(223, 205, 195, 0.18);
+  --font: "JetBrains Mono", ui-monospace, "Courier New", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: var(--font);
+  color: var(--text);
+}
+
+/* ===== Background covers the screen on all devices ===== */
+.pic-background {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+}
+.pic-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* image fills the screen without stretching */
+  display: block;
+}
+
+/* Dark overlay above the background */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(120% 120% at 50% 0%, rgba(0,0,0,0.25), rgba(0,0,0,0.75));
+}
+
+/* ===== Card area ===== */
+.stage {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  perspective: 1400px;   /* 3D depth for the flip */
+}
+
+/* The container that flips */
+.flip {
+  position: relative;
+  width: min(92vw, 380px);
+  min-height: 470px;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+.flip.is-flipped { transform: rotateY(180deg); }
+
+/* The two faces */
+.side {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 34px 30px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  /* Solid background (no backdrop-filter so the back face does not show through) */
+  background: linear-gradient(150deg, var(--card-1), var(--card-2));
+}
+.side--back { transform: rotateY(180deg); }
+
+/* ===== Front face ===== */
+.avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  background: linear-gradient(135deg, var(--c3), var(--c4));
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  margin-bottom: 16px;
+}
+
+.name {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+.name--sm { font-size: 1.3rem; margin-bottom: 8px; }
+
+.role {
+  margin: 4px 0 16px;
+  font-size: 0.85rem;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+/* Blinking cursor like a terminal */
+.cursor {
+  width: 8px;
+  height: 15px;
+  background: var(--accent);
+  display: inline-block;
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+.bio {
+  margin: 0 0 22px;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* ===== Icons ===== */
+.socials {
+  display: flex;
+  gap: 14px;
+  margin-bottom: auto;
+}
+.socials a {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: transform 0.2s, color 0.2s, border-color 0.2s, background 0.2s;
+}
+.socials a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  transform: translateY(-3px);
+}
+
+/* ===== Buttons ===== */
+.btn {
+  margin-top: 22px;
+  width: 100%;
+  padding: 13px 18px;
+  font-family: var(--font);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--c1);
+  background: var(--accent);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: filter 0.2s, transform 0.1s;
+}
+.btn:hover { filter: brightness(1.08); }
+.btn:active { transform: scale(0.98); }
+.btn--ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ===== Contact list (back face) ===== */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 auto;
+  width: 100%;
+  text-align: left;
+}
+.contact-list li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 11px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 0.82rem;
+}
+.contact-list .k {
+  color: var(--accent);
+  min-width: 62px;
+  font-size: 0.75rem;
+}
+.contact-list a {
+  color: var(--text);
+  text-decoration: none;
+  word-break: break-all;
+}
+.contact-list a:hover { color: var(--accent); text-decoration: underline; }
+
+/* Email copy button */
+.copy {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 0.82rem;
+  cursor: pointer;
+  word-break: break-all;
+  text-align: left;
+}
+.copy:hover .copy__text { color: var(--accent); text-decoration: underline; }
+.copy__hint {
+  font-size: 0.62rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.copy.is-copied .copy__text { color: var(--accent); }
+.copy.is-copied .copy__hint { color: var(--accent); }
+
+/* Accessibility */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .flip { transition: none; }
+  .cursor { animation: none; }
+}
